@@ -2,6 +2,7 @@
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
 // > Part A: import upload image
+import { uploadImage } from '../fetch-utils.js';
 // > Part B: import fetch to create a pet
 
 /* Get DOM Elements */
@@ -32,6 +33,7 @@ petForm.addEventListener('submit', async (e) => {
     const randomFolder = Math.floor(Date.now() * Math.random());
     const imagePath = `pets/${randomFolder}/${imageFile.name}`;
     // > Part A: Call upload image with the bucket ("images"),
+    const response = await uploadImage('images', imagePath, imageFile);
     // the imagePath, and the imageFile - and store the returned url
 
     const pet = {
