@@ -50,7 +50,6 @@ function displayPets() {
 
     for (const pet of pets) {
         const petEl = renderPet(pet);
-        console.log(petEl);
         petList.append(petEl);
     }
 }

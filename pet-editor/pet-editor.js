@@ -50,12 +50,12 @@ petForm.addEventListener('submit', async (e) => {
     //    - store the error and pets state from the response
     error = response.error;
     //    - either display the error or redirect the user to the home page
+    if (error) {
+        displayError();
+    } else {
+        location.assign('/');
+    }
 });
-if (error) {
-    displayError();
-} else {
-    location.assign('/');
-}
 
 /* Display Functions */
 
